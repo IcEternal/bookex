@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<class lv="1" value="6" name="Service">
+		<class lv="2" name="电脑手机技术"></class>
+		<class lv="2" name="课程辅导"></class>
+		<class lv="2" name="代购服务"></class>
+		<class lv="2" name="其他"></class>
+	</class>
+	<class lv="1" value="5" name="二手物品">
+		<class lv="2" name="电子数码"></class>
+		<class lv="2" name="美妆用品"></class>
+		<class lv="2" name="自行车"></class>
+		<class lv="2" name="其他生活用品"></class>
+	</class>
+	<class lv="1" value="1" name="教材教辅">
+		<class lv="2" name="数学"></class>
+		<class lv="2" name="英语"></class>
+		<class lv="2" name="物理"></class>
+		<class lv="2" name="思政必修课"></class>
+		<class lv="2" name="电子信息与电气"></class>
+		<class lv="2" name="医药"></class>
+		<class lv="2" name="机械与动力"></class>
+		<class lv="2" name="软件"></class>
+		<class lv="2" name="计算机科学"></class>
+		<class lv="2" name="信息安全"></class>
+		<class lv="2" name="船舶海洋与建筑"></class>
+		<class lv="2" name="航空航天"></class>
+		<class lv="2" name="材料科学"></class>
+		<class lv="2" name="化学"></class>
+		<class lv="2" name="环境科学"></class>
+		<class lv="2" name="生物"></class>
+		<class lv="2" name="农业"></class>
+		<class lv="2" name="人文"></class>
+		<class lv="2" name="经济与管理"></class>
+		<class lv="2" name="法学"></class>
+		<class lv="2" name="小语种"></class>
+		<class lv="2" name="音乐"></class>
+		<class lv="2" name="考研资料"></class>
+		<class lv="2" name="其他"></class>
+	</class>
+	<class lv="1" value="1" name="文学与哲学">
+		<class lv="2" name="哲学"></class>
+		<class lv="2" name="小说"></class>
+		<class lv="2" name="传记"></class>
+		<class lv="2" name="散文"></class>
+		<class lv="2" name="其他"></class>
+	</class>
+	<class lv="1" value="2" name="成功学"></class>
+	<class lv="1" value="3" name="休闲与杂志"></class>
+	<class lv="1" value="4" name="其他书本"></class>
+</table>
