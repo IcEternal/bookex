@@ -119,7 +119,7 @@ $count = 20;
 <?php include("header.php"); ?>
 
 <div id="content">
-	<h2>推荐书目</h2>
+	<h2>推荐列表</h2>
 	<?php
 		for ($i = 0; $i < $count; $i++) {
 			showItem($result[$i]);
