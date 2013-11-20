@@ -75,13 +75,15 @@
 			return $newkey;
 		}
 
+
 		function getResult(){
 			$this->load->helper('safe');
 			jd_stopattack();
 			$page = 1;$key = '';
-			$fields = "id,name,author,price,originprice,publisher,ISBN,description,uploader,subscriber,subscribetime,finishtime,hasimg";
 			if (array_key_exists('page', $_GET)) $page = $_GET['page'];
 			if (array_key_exists('key', $_GET)) $key = $_GET['key'];
+			$fields = "id,name,author,price,originprice,publisher,ISBN,description,uploader,subscriber,subscribetime,finishtime,hasimg";
+			//if (hasIllegal($key)) echo "what did you enter";
 			//add to Table search to record user's action
 			if ($this->session->userdata('is_logged_in')) {
 				$user = $this->session->userdata('username');
