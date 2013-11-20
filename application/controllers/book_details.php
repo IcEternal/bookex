@@ -90,7 +90,7 @@ class Book_details extends CI_Controller {
 			return;
 		}
 		$book_info = $this->book_model->get_book_infomation($book_id);
-		$user = strtolower($this->session->userdata('username'));
+		$user = $this->session->userdata('username');
 
 		if ($user != $this->getSubscriber($book_id)) {
 			$this->load_page($book_id, '您还未订购该书', false);
