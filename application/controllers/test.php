@@ -23,43 +23,28 @@ class Test extends CI_Controller {
 		echo "total sold:  ".$tot."!!<br/>";
 		echo "total sold:  ".$num."books!";
 	}
-	/*
-	function generate_ticket() {
+	
+	function initial_ticket() {
 		$arr = array();
 		$max = 2000000000;
-		//discount_ticket
-		for ($i = 0;$i < 5000;$i++) {
-			$x = rand(0, $max);
-			while (isset($arr["$x"])) {
+		//generate_ticket
+		for ($type = 1; $type <= 6;$type++) {
+			for ($i = 0;$i < 1000;$i++) {
 				$x = rand(0, $max);
+				while (isset($arr["$x"])) {
+					$x = rand(0, $max);
+				}
+				$arr["$x"] = true;
+				$str = (string)dechex($x);
+				$data = array(
+					'ticket_id' => $str,
+					'type' => $type
+					);
+				$this->db->insert('jcode_ticket', $data);
 			}
-			$arr["$x"] = true;
-			$str = (string)dechex($x);
-			$data = array(
-				'ticket_id' => $str,
-				'activated' => false,
-				'used' => false
-				);
-			$this->db->insert('discount_ticket', $data);
-		}
-
-		//free_ticket
-		for ($i = 0;$i < 1000;$i++) {
-			$x = rand(0, $max);
-			while (isset($arr["$x"])) {
-				$x = rand(0, $max);
-			}
-			$arr["$x"] = true;
-			$str = (string)dechex($x);
-			$data = array(
-				'ticket_id' => $str,
-				'activated' => false,
-				'used' => false
-				);
-			$this->db->insert('free_ticket', $data);
 		}
 	}
-	*/
+	
 
 	private $title = "博 · 易BookEx抵价券来啦~";
 	private $title1 = "博 · 易BookEx免费兑书券来啦~";
@@ -142,7 +127,4 @@ class Test extends CI_Controller {
 		$this->db->query("UPDATE $database SET activated=1 WHERE id=$id");
 		return $row->ticket_id;
 	}
-	
-
-
 }
