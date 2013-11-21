@@ -19,7 +19,7 @@
 		?>
 		<div class="fixed"></div>
 		<div class="TKcontent">
-			<h2 class="TKH"> 我的优惠券 </h2>
+			<h2 class="TKH"> 显示等待被使用的优惠券们~~</h2>
 			<div class="TKmain">
 		<?php
 		for ($i = 1;$i <= 6;++$i) {
@@ -73,7 +73,7 @@
 	}
 	$(".getTicket").css("cursor", "pointer").bind("click", getTicket);
 	$(document).ready(function(){
-	$(".TKH").click(function(){
+	$(".TKH").css("cursor", "pointer").click(function(){
 	    $(".TKmain").slideToggle();
 	  });
 	});
