@@ -5,17 +5,7 @@ class Jcode extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('jcode_model');
-		$this->is_logged_in();
 	}
-
-	function is_logged_in() {
-		$is_logged_in = $this->session->userdata('is_logged_in');
-
-		if (!isset($is_logged_in) || $is_logged_in != true) {
-			redirect('login');
-		}
-	}
-
 
 	function isAdmin(){
 		$adminList = array('JCode', 'haichongfu2003', 'zhcpzyjtx');
@@ -25,10 +15,14 @@ class Jcode extends CI_Controller {
 
 
 	function index() {
+		$data["show_ticket"] = false;
+		if ($this->session->userdata('is_logged_in') == true)
+			$data["show_ticket"] = true;
 		for ($i = 1;$i <= 6;++$i) {
 			$data["num"]["$i"] = $this->jcode_model->getTicketNum($i);
-			$data["ticket"]["$i"] = $this->jcode_model->getAllTicket($i);
+				$data["ticket"]["$i"] = $this->jcode_model->getAllTicket($i);
 		}
+
 		$this->load->view('includes/header');
 		$this->load->view('jcode/index', $data);
 		$this->load->view('includes/footer');
@@ -36,6 +30,10 @@ class Jcode extends CI_Controller {
 
 	function getTicket() {
 		$type = $_GET['ticket_type'];
+		if ($this->session->userdata('is_logged_in') != true) {
+			echo '请先登录哦~';
+			return;
+		}
 		if ($this->jcode_model->hasGet()) {
 			echo '今日已经领过了一张了，明天再来吧~~~~';
 			return;

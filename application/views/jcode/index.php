@@ -13,12 +13,14 @@
 ?>
 
 <?php
-	for ($i = 1;$i <= 6;++$i) {
-		echo getTypeString($i)."<br/>";
-		foreach ($ticket["$i"] as $eachTicket) {
-			echo $eachTicket->ticket_id."<br/>";
-		}
-	} 
+	if ($show_ticket) {
+		for ($i = 1;$i <= 6;++$i) {
+			echo getTypeString($i)."<br/>";
+			foreach ($ticket["$i"] as $eachTicket) {
+				echo $eachTicket->ticket_id."<br/>";
+			}
+		} 
+	}
  ?>
 
 <?php 
