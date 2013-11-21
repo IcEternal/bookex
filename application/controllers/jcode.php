@@ -5,14 +5,50 @@ class Jcode extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('jcode_model');
+		$this->is_logged_in();
+	}
+
+	function is_logged_in() {
+		$is_logged_in = $this->session->userdata('is_logged_in');
+
+		if (!isset($is_logged_in) || $is_logged_in != true) {
+			redirect('login');
+		}
 	}
 
 
 	function isAdmin(){
-		$adminList = array('JCode', 'haichongfu2003');
+		$adminList = array('JCode', 'haichongfu2003', 'zhcpzyjtx');
 		$username = $this->session->userdata('username');
 		return in_array($username, $adminList);
 	}
+
+
+	function index() {
+		for ($i = 1;$i <= 6;++$i) {
+			$data["num"]["$i"] = $this->jcode_model->getTicketNum($i);
+			$data["ticket"]["$i"] = $this->jcode_model->getAllTicket($i);
+		}
+		$this->load->view('includes/header');
+		$this->load->view('jcode/index', $data);
+		$this->load->view('includes/footer');
+	}
+
+	function getTicket() {
+		$type = $_GET['ticket_type'];
+		if ($this->jcode_model->hasGet()) {
+			echo '今日已经领过了一张了，明天再来吧~~~~';
+			return;
+		}	
+		if ($this->jcode_model->noRemain($type)) {
+			echo '该券已经没有了~每天0点会重新补充至10张哦~现在先换一种看看试试吧~~~~';
+			return;
+		}
+		$ticket_id = $this->jcode_model->getTicket($type);
+		echo '成功领取咯！号码为'."$ticket_id";
+		return;
+	}
+
 	function admin(){
 		if (!$this->isAdmin()) {
 			echo '该账号不是JCode指定的账号。';
