@@ -4,6 +4,7 @@ class Jcode extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this->auth->is_admin();
 		$this->load->model('jcode_model');
 	}
 
