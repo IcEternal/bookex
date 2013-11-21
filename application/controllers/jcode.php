@@ -40,11 +40,11 @@ class Jcode extends CI_Controller {
 			return;
 		}	
 		if ($this->jcode_model->noRemain($type)) {
-			echo '该券已经没有了~每天0点会重新补充至10张哦~现在先换一种看看试试吧~~~~';
+			echo '该券已经没有了~每天0点会重新补充哦~现在先换一种看看试试吧~~~~';
 			return;
 		}
 		$ticket_id = $this->jcode_model->getTicket($type);
-		echo '成功领取咯！号码为'."$ticket_id";
+		echo '成功领取咯！号码为'."$ticket_id".". 请带着它前往jCode哈~~";
 		return;
 	}
 
