@@ -28,7 +28,7 @@
 			<div class="jCodeTKcontent">
 				<?php
 					foreach ($ticket["$i"] as $eachTicket) {
-						echo $eachTicket->ticket_id."<br/>";
+						echo $eachTicket->ticket_id." ";
 					}
 				?>
 			</div>
