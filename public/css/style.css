@@ -410,3 +410,19 @@ body {
 	float: right;
 	color: #f92040;
 }
+.TKmain {
+	display: none;
+	padding-bottom: 20px;
+}
+.TKcontent {
+	width: 1000px;
+	padding: 20px 20px 0 20px;
+	background: #fff;
+	margin-bottom: 20px;
+}
+.TKcontent h2 {
+	background: #f7f7f7;
+	border-bottom: 1px solid #eee;
+	margin: -20px -20px 20px -20px;
+	padding: 15px 20px;
+}

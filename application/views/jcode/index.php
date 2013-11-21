@@ -13,6 +13,35 @@
 ?>
 
 <div id="messageBox" ></div>
+
+<?php
+	if ($show_ticket) {
+		?>
+		<div class="fixed"></div>
+		<div class="TKcontent">
+			<h2 class="TKH"> 我的优惠券 </h2>
+			<div class="TKmain">
+		<?php
+		for ($i = 1;$i <= 6;++$i) {
+		?>
+			<div class="jCodeTKname"><?php echo getTypeString($i); ?></div>
+			<div class="jCodeTKcontent">
+				<?php
+					foreach ($ticket["$i"] as $eachTicket) {
+						echo $eachTicket->ticket_id." ";
+					}
+				?>
+			</div>
+			<?php
+		} 
+		?>
+		<div class="fixed"></div>
+			</div>
+		</div>
+		<?php
+	}
+?>
+
 <div id="jCodecontent">
 <?php 
 	for ($i = 1;$i <= 6;++$i) { 
@@ -31,32 +60,6 @@
 ?>
 </div>
 
-<?php
-	if ($show_ticket) {
-		?>
-		<div class="fixed"></div>
-		<div class="content-full">
-			<h2> 我的优惠券 </h2>
-		<?php
-		for ($i = 1;$i <= 6;++$i) {
-		?>
-			<div class="jCodeTKname"><?php echo getTypeString($i); ?></div>
-			<div class="jCodeTKcontent">
-				<?php
-					foreach ($ticket["$i"] as $eachTicket) {
-						echo $eachTicket->ticket_id."<br/>";
-					}
-				?>
-			</div>
-			<?php
-		} 
-		?>
-		<div class="fixed"></div>
-		</div>
-		<?php
-	}
-?>
-
 <script type="text/javascript">
 	var getTicket = function(event){
 		event.preventDefault();
@@ -69,4 +72,9 @@
             });
 	}
 	$(".getTicket").css("cursor", "pointer").bind("click", getTicket);
+	$(document).ready(function(){
+	$(".TKH").click(function(){
+	    $(".TKmain").slideToggle();
+	  });
+	});
 </script>
