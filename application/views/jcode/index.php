@@ -12,28 +12,50 @@
 
 ?>
 
-<?php
-	if ($show_ticket) {
-		for ($i = 1;$i <= 6;++$i) {
-			echo getTypeString($i)."<br/>";
-			foreach ($ticket["$i"] as $eachTicket) {
-				echo $eachTicket->ticket_id."<br/>";
-			}
-		} 
-	}
- ?>
-
+<div id="messageBox" ></div>
+<div id="jCodecontent">
 <?php 
 	for ($i = 1;$i <= 6;++$i) { 
 ?>
-	<?php echo getTypeString($i)." 剩余".$num["$i"]."<br/>"; ?>
-	<div class="btn getTicket" ticket_type = "<?php echo "$i" ?>">Click Here to Get</div>
+	<div class="jCodebox">
+		<div class="pic">
+			<img src="<?php echo base_url() ?>public/img/jcode.png" />
+		</div>
+		<div class="info">
+			<span class="name"><?php echo getTypeString($i)." 剩余".$num["$i"]; ?></span>
+			<span class="getTicket" ticket_type = "<?php echo "$i" ?>">领取</span>
+		</div>
+	</div>
 <?php
 	}
 ?>
+</div>
 
-
-<div id="messageBox"></div>
+<?php
+	if ($show_ticket) {
+		?>
+		<div class="fixed"></div>
+		<div class="content-full">
+			<h2> 我的优惠券 </h2>
+		<?php
+		for ($i = 1;$i <= 6;++$i) {
+		?>
+			<div class="jCodeTKname"><?php echo getTypeString($i); ?></div>
+			<div class="jCodeTKcontent">
+				<?php
+					foreach ($ticket["$i"] as $eachTicket) {
+						echo $eachTicket->ticket_id."<br/>";
+					}
+				?>
+			</div>
+			<?php
+		} 
+		?>
+		<div class="fixed"></div>
+		</div>
+		<?php
+	}
+?>
 
 <script type="text/javascript">
 	var getTicket = function(event){
@@ -43,7 +65,7 @@
             {"ticket_type":$(this).attr("ticket_type")},
             function(data)
             {
-            	$("#messageBox").text(data);
+            	$("#messageBox").text(data).slideDown();
             });
 	}
 	$(".getTicket").css("cursor", "pointer").bind("click", getTicket);
