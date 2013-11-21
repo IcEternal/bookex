@@ -1,11 +1,11 @@
 <?php 
 	function getTypeString($type){
-		if ($type == 1) return '49元（减9元）';
-		if ($type == 2) return '59元（减9元）';
-		if ($type == 3) return '69元（减9元）';
-		if ($type == 4) return '49元（免费）';
-		if ($type == 5) return '59元（免费）';
-		if ($type == 6) return '69元（免费）';
+		if ($type == 1) return '39元（减9元）';
+		if ($type == 2) return '49元（减9元）';
+		if ($type == 3) return '59元（减9元）';
+		if ($type == 4) return '39元（免费）';
+		if ($type == 5) return '49元（免费）';
+		if ($type == 6) return '59元（免费）';
 		return '数据库错误，未知';
 	}
 
@@ -53,7 +53,8 @@ else {
 		</p>
 	</div>
 
-	<a href="<?php echo site_url("jcode/getTicketInfo?ticket_id=$ticketid&use=1"); ?>">使用这张券</a>
+	<a class="btn btn-primary" href="<?php echo site_url("jcode/getTicketInfo?ticket_id=$ticketid&use=1"); ?>">使用这张券</a>
+	<a class="btn" href="<?php echo site_url("jcode/admin"); ?>">返回</a>
 </div>
 
 <?php } ?>
