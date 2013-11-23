@@ -9,6 +9,12 @@ class Jcode_model extends CI_Model {
 		parent::__construct();
 	}
 
+	function getEightAm() {
+		$res = $this->db->query('SELECT now() as time')->result();
+		$time = substr($res[0]->time, 0, 11);
+		return $time."08:00:00";
+	}
+
 	function getTicketInfo($ticket_id){
 		$result = $this->db->select('*')->from('jcode_ticket')->where('ticket_id', $ticket_id)->get();
 		return $result;
@@ -19,7 +25,8 @@ class Jcode_model extends CI_Model {
 	}
 
 	function getTicketNum($type) {
-		$res = $this->db->query("SELECT COUNT(*) AS num FROM jcode_ticket WHERE activated_time >= TO_DAYS(now()) AND type = $type")->result();
+		$time = $this->getEightAm();
+		$res = $this->db->query("SELECT COUNT(*) AS num FROM jcode_ticket WHERE activated_time >= '$time' AND type = $type")->result();
 		if ($type <= 3) 
 			$x = $this->maxDiscountTicketNum;
 		else 
@@ -35,8 +42,9 @@ class Jcode_model extends CI_Model {
 	}
 
 	function hasGet() {
+		$time = $this->getEightAm();
 		$username = $this->session->userdata('username');
-		$row_num = $this->db->query("SELECT * from jcode_ticket WHERE activated_time >= TO_DAYS(now()) AND username = '$username'")->num_rows();
+		$row_num = $this->db->query("SELECT * from jcode_ticket WHERE activated_time >= '$time' AND username = '$username'")->num_rows();
 		return ($row_num > 0);
 	}
 
