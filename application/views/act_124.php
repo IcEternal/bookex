@@ -24,47 +24,90 @@ Just like the following:
 	<h2>各院青志队联系方式</h2>
 	<p>想要出售物品的同学请发送短信 "姓名+物品+寝室+是否需要单独摊位" 到各院青志队联系人手机~~~</p>
 	<p>如果需要单独摊位12.4日当天需要到场自己卖哦~~</p>
+  <div class="btn qzdContact" style="width:130px; margin-top:10px;">点击展开联系方式</div>
+  <div class="qzdTable" style="display:none; margin-top:10px;">
 	<table class="table table-bordered table-striped">
-            <colgroup>
-              <col class="span1">
-              <col class="span1">
-              <col class="span1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th>院系</th>
-                <th>联系人</th>
-                <th>手机号</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>化院</td>
-                <td>严佳妮</td>
-                <td>15202177989</td>
-              </tr>
-              <tr>
-                <td>化院</td>
-                <td>严佳妮</td>
-                <td>15202177989</td>
-              </tr>
-              <tr>
-                <td>化院</td>
-                <td>严佳妮</td>
-                <td>15202177989</td>
-              </tr>
-              <tr>
-                <td>化院</td>
-                <td>严佳妮</td>
-                <td>15202177989</td>
-              </tr>
-              <tr>
-                <td>化院</td>
-                <td>严佳妮</td>
-                <td>15202177989</td>
-              </tr>
-            </tbody>
-          </table>
+    <colgroup>
+      <col class="span1">
+      <col class="span1">
+      <col class="span1">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>院系</th>
+        <th>联系人</th>
+        <th>手机号</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>化院</td>
+        <td>严佳妮</td>
+        <td>15202177989</td>
+      </tr>
+      <tr>
+        <td>生科院</td>
+        <td>彭笑芸</td>
+        <td>18818273112</td>
+      </tr>
+      <tr>
+        <td>凯原</td>
+        <td>牛喜堃</td>
+        <td>13122261017</td>
+      </tr>
+      <tr>
+        <td>安泰</td>
+        <td>许玲苹</td>
+        <td>18317151530</td>
+      </tr>
+      <tr>
+        <td>密西根</td>
+        <td>叶楚楠</td>
+        <td>13636323493</td>
+      </tr>
+      <tr>
+        <td>微电子</td>
+        <td>严谈玮</td>
+        <td>18018678737</td>
+      </tr>
+      <tr>
+        <td>机动</td>
+        <td>吴润琦</td>
+        <td>18817874979</td>
+      </tr>
+      <tr>
+        <td>药学院</td>
+        <td>倪承刚</td>
+        <td>13774289668</td>
+      </tr>
+      <tr>
+        <td>软院</td>
+        <td>王弗宗</td>
+        <td>18818272604</td>
+      </tr>
+      <tr>
+        <td>外院</td>
+        <td>侯瑜超</td>
+        <td>13301756160</td>
+      </tr>
+      <tr>
+        <td>数学系</td>
+        <td>杨畅</td>
+        <td>18818213447</td>
+      </tr>
+      <tr>
+        <td>材料</td>
+        <td>彭治力</td>
+        <td>18818270902</td>
+      </tr>
+      <tr>
+        <td>致远</td>
+        <td>曹核威</td>
+        <td>15921118891</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 </div><!-- content-full -->
 
 <div class="content-full"><!-- structure -->
@@ -95,5 +138,14 @@ Just like the following:
 
 
 </div><!-- content-full -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".qzdContact").css("cursor", "pointer").click(function(){
+      $(".qzdTable").slideDown("slow");
+      $(this).hide();
+    });
+  });
+</script>
 
 <?php include("includes/footer.php"); ?>
