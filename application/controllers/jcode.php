@@ -4,12 +4,11 @@ class Jcode extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->auth->is_admin();
 		$this->load->model('jcode_model');
 	}
 
 	function isAdmin(){
-		$adminList = array('JCode', 'haichongfu2003', 'zhcpzyjtx');
+		$adminList = array('Jcode', 'haichongfu2003', 'zhcpzyjtx');
 		$username = $this->session->userdata('username');
 		return in_array($username, $adminList);
 	}
