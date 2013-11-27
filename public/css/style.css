@@ -400,12 +400,12 @@ body {
 	display: none;
 }
 .jCodeTKname {
-	width: 120px;
+	width: 200px;
 	float: left;
 	color: #666;
 }
 .jCodeTKcontent {
-	width: 880px;
+	width: 800px;
 	height: 26px;
 	float: right;
 	color: #f92040;

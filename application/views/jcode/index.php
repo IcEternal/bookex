@@ -14,6 +14,18 @@
 
 <div id="messageBox" ></div>
 
+<div class="TKcontent">
+	<h2 class="TKH">显示活动细则</h2>
+	<div class="TKmain">
+		由 BookEx 和 Jcode 联合推出 <br/>
+		持续时间：2013/11/28 - 2013/12/28 <br/>
+		每天早上8点准时放出当日三张免费票和30张88折券 <br/>
+		免费票限一人使用，88折券可以团队使用 <br/><br/>
+		地点：拖鞋门对面好第坊小区内35栋101室<br/>
+		联系方式：13701701734
+	</div>
+</div>
+
 <?php
 	if ($show_ticket) {
 		?>
@@ -74,7 +86,7 @@
 	$(".getTicket").css("cursor", "pointer").bind("click", getTicket);
 	$(document).ready(function(){
 	$(".TKH").css("cursor", "pointer").click(function(){
-	    $(".TKmain").slideToggle();
+	    $(this).siblings(".TKmain").slideToggle();
 	  });
 	});
 </script>
