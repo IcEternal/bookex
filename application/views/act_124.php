@@ -30,79 +30,64 @@ Just like the following:
     <colgroup>
       <col class="span1">
       <col class="span1">
-      <col class="span1">
     </colgroup>
     <thead>
       <tr>
         <th>院系</th>
-        <th>联系人</th>
         <th>手机号</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>化院</td>
-        <td>严佳妮</td>
         <td>15202177989</td>
       </tr>
       <tr>
         <td>生科院</td>
-        <td>彭笑芸</td>
         <td>18818273112</td>
       </tr>
       <tr>
         <td>凯原</td>
-        <td>牛喜堃</td>
         <td>13122261017</td>
       </tr>
       <tr>
         <td>安泰</td>
-        <td>许玲苹</td>
         <td>18317151530</td>
       </tr>
       <tr>
         <td>密西根</td>
-        <td>叶楚楠</td>
         <td>13636323493</td>
       </tr>
       <tr>
         <td>微电子</td>
-        <td>严谈玮</td>
         <td>18018678737</td>
       </tr>
       <tr>
         <td>机动</td>
-        <td>吴润琦</td>
         <td>18817874979</td>
       </tr>
       <tr>
         <td>药学院</td>
-        <td>倪承刚</td>
         <td>13774289668</td>
       </tr>
       <tr>
         <td>软院</td>
-        <td>王弗宗</td>
         <td>18818272604</td>
       </tr>
       <tr>
         <td>外院</td>
-        <td>侯瑜超</td>
         <td>13301756160</td>
       </tr>
       <tr>
         <td>数学系</td>
-        <td>杨畅</td>
         <td>18818213447</td>
       </tr>
       <tr>
         <td>材料</td>
-        <td>彭治力</td>
         <td>18818270902</td>
       </tr>
       <tr>
         <td>致远</td>
-        <td>曹核威</td>
         <td>15921118891</td>
       </tr>
     </tbody>
