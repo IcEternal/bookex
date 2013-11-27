@@ -21,10 +21,11 @@ Just like the following:
 <?php include("includes/header.php"); ?>
 
 <div class="content-full"><!-- structure -->
-	<h2>各院青志队联系方式</h2>
+	<h2>各院联系方式</h2>
 	<p>想要出售物品的同学请发送短信 "姓名+物品+寝室" 到各院青志队联系人手机~~~</p>
 	<p>另外我们提供大量摊位，想自己卖东西的同学12.4日当天带着物品到现场就行了哈~~</p>
-  <div class="btn qzdContact" style="width:130px; margin-top:10px;">点击展开联系方式</div>
+  <p>如有疑问请拨打 15900773276 或 15821921130~</p>
+  <div class="btn qzdContact" style="width:130px; margin-top:10px;">点击展开青志队联系方式</div>
   <div class="qzdTable" style="display:none; margin-top:10px;">
 	<table class="table table-bordered table-striped">
     <colgroup>
