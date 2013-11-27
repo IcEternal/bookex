@@ -103,18 +103,7 @@
 			$user = $this->session->userdata('username');
 			$newkey = $this->getKey($key);
 			$order = "order by ((CASE WHEN name LIKE '%$key%' THEN 2 ELSE 0 END) + (CASE WHEN author LIKE '%$key%' THEN 1 ELSE 0 END)) DESC, hasimg DESC, id DESC";
-			
-			//add discount and free scope search
-			$scope = '';
-			if (array_key_exists('scope', $_GET)) {
-				if ($_GET['scope'] == 'discount') {
-					$scope = 'AND (discount_sup = 1)';
-				}
-				else {
-					$scope = 'AND (free_sup = 1)';
-				}
-			}
-			$condition = "((CONCAT(name, author) LIKE \"$newkey\" OR uploader LIKE \"$key\") AND (subscriber = \"N\" OR subscriber = \"$user\" OR uploader = \"$user\") AND (id > 1) AND del != true AND (finishtime = \"0000-00-00 00:00:00\") $scope)";
+			$condition = "((CONCAT(name, author) LIKE \"$newkey\" OR uploader LIKE \"$key\") AND (subscriber = \"N\" OR subscriber = \"$user\" OR uploader = \"$user\") AND (id > 1) AND del != true AND (finishtime = \"0000-00-00 00:00:00\"))";
 
 
 

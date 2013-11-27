@@ -161,55 +161,13 @@ Just like the following:
 	</div>
 </div> <!-- sidebar -->
 
-<?php //promo code ?>
-<script type="text/javascript">
 
-	var discount_ticket = function(event){
-		event.stopPropagation();
-		var ticket = document.getElementById("discount_ticket_input").value;
-		$.get(
-            "<?php echo site_url();?>/book_details/use_discount_ticket",
-            {"book_id":"<?php echo $id; ?>", "ticket": ticket},
-            function(data)
-            {
-            	
-            	$("#ticket_message").text(data);
-            	if (data.indexOf("使用成功") >= 0) location.reload();
-            });
-	}
-
-	var free_ticket = function(event){
-		event.stopPropagation();
-		var ticket = document.getElementById("free_ticket_input").value;
-		$.get(
-            "<?php echo site_url();?>/book_details/use_free_ticket",
-            {"book_id":"<?php echo $id; ?>", "ticket": ticket},
-            function(data)
-            {
-            	
-            	$("#ticket_message").text(data);
-            	if (data.indexOf("使用成功") >= 0) location.reload();
-            });
-	}
-
-	$("#discount_button").css({"cursor":"pointer"}).bind("click", discount_ticket);
-
-	$("#free_button").css({"cursor":"pointer"}).bind("click", free_ticket);
-
-</script>
-
-<?php
-	//big box alert when click the buy button.
-?>
 <script type="text/javascript">
   $("#phoneInfo").modal('show');
 </script>
 <script type="text/javascript">
 	if ($("#phoneInfo").size()<=0) 
 		$("#shareInfo").modal('show');
-</script>
-<script type="text/javascript">
-	$("#ticketInput").modal('show');
 </script>
 <script type="text/javascript">
   $("#do_not_use_phone").click(function() {

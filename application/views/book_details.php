@@ -259,34 +259,6 @@ Just like the following:
 <?php //promo code ?>
 <script type="text/javascript">
 
-	var discount_ticket = function(event){
-		event.stopPropagation();
-		var ticket = document.getElementById("discount_ticket_input").value;
-		$.get(
-            "<?php echo site_url();?>/book_details/use_discount_ticket",
-            {"book_id":"<?php echo $id; ?>", "ticket": ticket},
-            function(data)
-            {
-            	
-            	$("#ticket_message").text(data);
-            	if (data.indexOf("使用成功") >= 0) location.reload();
-            });
-	}
-
-	var free_ticket = function(event){
-		event.stopPropagation();
-		var ticket = document.getElementById("free_ticket_input").value;
-		$.get(
-            "<?php echo site_url();?>/book_details/use_free_ticket",
-            {"book_id":"<?php echo $id; ?>", "ticket": ticket},
-            function(data)
-            {
-            	
-            	$("#ticket_message").text(data);
-            	if (data.indexOf("使用成功") >= 0) location.reload();
-            });
-	}
-
 	var never_show_activity = function(event) {
 		event.stopPropagation();
 		$.ajax({url: "<?php echo site_url();?>/ajax/neverShowActivity"});
@@ -294,9 +266,6 @@ Just like the following:
 	}
 
 	$("#never_show_activity_prompt").css({"cursor":"pointer"}).bind("click", never_show_activity);
-	$("#discount_button").css({"cursor":"pointer"}).bind("click", discount_ticket);
-
-	$("#free_button").css({"cursor":"pointer"}).bind("click", free_ticket);
 
 </script>
 
@@ -309,9 +278,6 @@ Just like the following:
 <script type="text/javascript">
 	if ($("#phoneInfo").size()<=0) 
 		$("#shareInfo").modal('show');
-</script>
-<script type="text/javascript">
-	$("#ticketInput").modal('show');
 </script>
 <script type="text/javascript">
   	$("#do_not_use_phone").click(function() {

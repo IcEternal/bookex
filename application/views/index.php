@@ -19,7 +19,8 @@ Just like the following:
  */ 
 
 $is_logged_in = $this->session->userdata('is_logged_in');
-if ((isset($is_logged_in) && $is_logged_in == true) || @$_GET["from"] == "welcome"): 
+//if ((isset($is_logged_in) && $is_logged_in == true) || @$_GET["from"] == "welcome"): 
+if (true):
 	// Display the welcome page.
 	include("includes/index_logined.php"); 
 else:

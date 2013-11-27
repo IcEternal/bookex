@@ -1,17 +1,18 @@
 <?php 
 	function getTypeString($type){
-		if ($type == 1) return '39元（减9元）';
-		if ($type == 2) return '49元（减9元）';
-		if ($type == 3) return '59元（减9元）';
-		if ($type == 4) return '39元（免费）';
-		if ($type == 5) return '49元（免费）';
-		if ($type == 6) return '59元（免费）';
+		if ($type == 1) return '吃货之屋88折';
+		if ($type == 2) return '女巫惊魂夜88折';
+		if ($type == 3) return '天机秘境88折';
+		if ($type == 4) return '吃货之屋免费券';
+		if ($type == 5) return '女巫惊魂夜免费券';
+		if ($type == 6) return '天机秘境免费券';
 		return '数据库错误，未知';
 	}
 
-	if (!$valid){ ?>
-		<div class = "row-fluid">
+if (!$valid){ ?>
+	<div class = "row-fluid">
 		<p class = "span2">  <strong> 该优惠券不存在。</strong> </p>
+		<a class="btn" href="<?php echo site_url("jcode/admin"); ?>">返回</a>
 	</div>
 <?php } 
 else {

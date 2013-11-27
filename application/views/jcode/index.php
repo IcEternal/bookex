@@ -1,12 +1,12 @@
 <?php
 	
 	function getTypeString($type){
-		if ($type == 1) return '49元（减9元）';
-		if ($type == 2) return '59元（减9元）';
-		if ($type == 3) return '69元（减9元）';
-		if ($type == 4) return '49元（免费）';
-		if ($type == 5) return '59元（免费）';
-		if ($type == 6) return '69元（免费）';
+		if ($type == 1) return '吃货之屋88折';
+		if ($type == 2) return '女巫惊魂夜88折';
+		if ($type == 3) return '天机秘境88折';
+		if ($type == 4) return '吃货之屋免费券';
+		if ($type == 5) return '女巫惊魂夜免费券';
+		if ($type == 6) return '天机秘境免费券';
 		return '数据库错误，未知';
 	}
 
@@ -48,7 +48,7 @@
 ?>
 	<div class="jCodebox">
 		<div class="pic">
-			<img src="<?php echo base_url() ?>public/img/jcode.png" />
+			<img src="<?php echo base_url() ?>public/img/jcode/jcode<?php echo $i ?>.jpg" />
 		</div>
 		<div class="info">
 			<span class="name"><?php echo getTypeString($i)." 剩余".$num["$i"]; ?></span>

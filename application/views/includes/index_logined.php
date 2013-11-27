@@ -119,6 +119,9 @@ $count = 20;
 <?php include("header.php"); ?>
 
 <div id="content">
+	<a href="<?php echo site_url().'/jcode' ?>">
+		<img src="<?php echo base_url().'/public/img/jcode/jCodeBanner.jpg' ?>">
+	</a>
 	<h2>推荐列表</h2>
 	<?php
 		for ($i = 0; $i < $count; $i++) {
@@ -133,4 +136,5 @@ $count = 20;
 	<?php include("navlist.php"); ?>
 </div>
 
+<?php //include("actDetailPrompt.php") ?>
 <?php include("footer.php"); ?>

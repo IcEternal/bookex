@@ -77,54 +77,5 @@ class Test extends CI_Controller {
 		}
 	}
 
-	//test email limit
-	function test_email() {
-		$sent = 0;
-		for ($i=1;$i<2;++$i) {
-			if ($sent == 50) return 0;
-			$sent++;
-			if (send_mail("devillaw_zhc@163.com", $this->title, $this->content.$this->generate_ticket(1).$this->content2.$this->content3)) {
-				echo $i.": success<br/>";
-			}
-			else {
-				echo $i.": fail<br/>";
-			}
-		}
-	}
-
-	function send_free_ticket($time) {
-		$sent = 0;
-		$user = $this->db->query('select username,email,sent_ticket from user where student_number LIKE "510%" OR student_number LIKE "511%" OR student_number LIKE "512%" OR student_number LIKE "513%" OR student_number LIKE "110%" OR student_number LIKE "111%" OR student_number LIKE "112%" OR student_number LIKE "113%" OR student_number LIKE "310%" OR student_number LIKE "311%" OR student_number LIKE "312%" OR student_number LIKE "313%" OR student_number LIKE "710%" OR student_number LIKE "711%" OR student_number LIKE "712%" OR student_number LIKE "713%"')->result();
-		foreach ($user as $user_row) {
-			if ($sent == 500) return 0;
-			$username = $user_row->username;
-			$num = $this->db->query("select id from book where uploader='$username' AND uploadtime < '$time 00:00:00' AND del != true")->num_rows;
-			$need = floor($num/10)-$user_row->sent_ticket;
-			if ($need > 0) {
-				$sent++;
-				$tickets = '';
-				for ($i = 0;$i<$need;++$i) {
-					$tickets = $tickets.$this->generate_ticket(2).'<br/>';
-				}
-				$email = $user_row->email;
-				echo "$username"."   "."$need"."  "."$email"."<br/>";			
-				batch_mail($email, $this->title1, $this->content1.$this->generate_ticket(2).$this->content2.$this->content3);
-				$sent_ticket = $need + $user_row->sent_ticket;
-				$this->db->query("update user set sent_ticket = $sent_ticket where username = '$username'");
-			}
-		}
-	}
-
-	//2013.10.7 generate discount and free ticket
-	function generate_ticket($type) {
-		if ($type == 1) 
-			$database = "discount_ticket";
-		else 
-			$database = "free_ticket";
-		$arr = $this->db->query("SELECT * from $database WHERE activated = 0 LIMIT 1")->result();
-		$row = $arr[0];
-		$id = $row->id;
-		$this->db->query("UPDATE $database SET activated=1 WHERE id=$id");
-		return $row->ticket_id;
-	}
+	
 }

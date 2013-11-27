@@ -151,7 +151,6 @@ private $content3 = "<br/><b>BookEx</b>今年5月份成立，还有很大的改�
 					'is_logged_in' => true
 				);
 				$this->session->set_userdata($data);
-				tran_mail($email,$this->title, $this->content1.$this->generate_ticket(1).$this->content2.$this->content3);
 				$this->redirect_to_index();
 			}
 			else {
@@ -213,18 +212,5 @@ private $content3 = "<br/><b>BookEx</b>今年5月份成立，还有很大的改�
 			$this->user_model->update($this->session->userdata('username'), $arr);
 			redirect('site/userspace');
 		}
-	}
-
-	//2013.10.7 generate discount and free ticket
-	function generate_ticket($type) {
-		if ($type == 1) 
-			$database = "discount_ticket";
-		else 
-			$database = "free_ticket";
-		$arr = $this->db->query("SELECT * from $database WHERE activated = 0 LIMIT 1")->result();
-		$row = $arr[0];
-		$id = $row->id;
-		$this->db->query("UPDATE $database SET activated=1 WHERE id=$id");
-		return $row->ticket_id;
 	}
 }

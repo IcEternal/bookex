@@ -91,4 +91,7 @@ class Welcome extends CI_Controller {
         $this->load->view("firefox_connection");
     }
 
+    function act_124() {
+		$this->load->view('act_124');
+	}
 }
