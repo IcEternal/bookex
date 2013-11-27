@@ -119,9 +119,9 @@ $count = 20;
 <?php include("header.php"); ?>
 
 <div id="content">
-	<!-- <a href="<?php echo site_url().'/jcode' ?>">
+	<a href="<?php echo site_url().'/jcode' ?>">
 		<img style="margin-bottom:35px;" src="<?php echo base_url().'/public/img/jcode/jCodeBanner.jpg' ?>" />
-	</a> -->
+	</a>
 	<h2>推荐列表</h2>
 	<?php
 		for ($i = 0; $i < $count; $i++) {

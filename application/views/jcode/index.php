@@ -17,12 +17,12 @@
 <div class="TKcontent">
 	<h2 class="TKH">显示活动细则</h2>
 	<div class="TKmain">
-		由 BookEx 和 Jcode 联合推出 <br/>
+		由 <span style="font-weight: bold">BookEx</span> 和 <span style="font-weight: bold">Jcode</span> 联合推出 <br/>
 		持续时间：2013/11/28 - 2013/12/28 <br/>
 		每天早上8点准时放出当日三张免费票和30张88折券 <br/>
-		免费票限一人使用，88折券可以团队使用 <br/><br/>
-		地点：拖鞋门对面好第坊小区内35栋101室<br/>
-		联系方式：13701701734
+		免费票限一人使用，88折券可供一组玩家（3-6人）使用 <br/><br/>
+		<span style="font-weight: bold; color: red">地点：拖鞋门对面好第坊小区内35栋101室</span><br/>
+		<span style="font-weight: bold; color: red">联系方式：13701701734</span>
 	</div>
 </div>
 
